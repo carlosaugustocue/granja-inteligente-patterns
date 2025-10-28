@@ -4,26 +4,14 @@ import com.granjainteligente.patterns.creational.builder.interfaces.AnimalBuilde
 import com.granjainteligente.patterns.creational.builder.model.Animal;
 
 /**
- * Clase Director que define el orden de construcción del producto.
- * No conoce los detalles internos del Builder, solo coordina el proceso.
+ * Director que orquesta la construcción de un {@link Animal}.
+ * No requiere el tipo: lo fija el builder concreto.
  */
 public class AnimalDirector {
 
-    /**
-     * Construye un animal siguiendo un orden lógico de pasos.
-     *
-     * @param builder instancia concreta de {@link AnimalBuilder}
-     * @param tipo tipo de animal
-     * @param raza raza o especie
-     * @param edad edad en años
-     * @param peso peso en kilogramos
-     * @param descripcion breve descripción del animal
-     * @return objeto {@link Animal} completamente construido
-     */
-    public Animal construirAnimal(AnimalBuilder builder, String tipo, String raza,
+    public Animal construirAnimal(AnimalBuilder builder, String raza,
                                   int edad, double peso, String descripcion) {
         return builder
-                .setTipo(tipo)
                 .setRaza(raza)
                 .setEdad(edad)
                 .setPeso(peso)

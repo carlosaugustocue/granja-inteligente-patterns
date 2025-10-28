@@ -1,8 +1,7 @@
 package com.granjainteligente.patterns.creational.builder.model;
 
 /**
- * Representa el producto final construido por los Builders.
- * Es inmutable (no se modifica una vez creado).
+ * Producto final construido por los Builders.
  */
 public class Animal {
     private final String tipo;

@@ -4,22 +4,15 @@ import com.granjainteligente.patterns.creational.builder.interfaces.AnimalBuilde
 import com.granjainteligente.patterns.creational.builder.model.Animal;
 
 /**
- * Builder concreto para construir objetos {@link Animal} del tipo "Vaca".
- * Los valores son configurables externamente (no se queman datos).
+ * Builder concreto para construir {@link Animal} del tipo "Vaca".
+ * El tipo se fija internamente en build().
  */
 public class VacaBuilder implements AnimalBuilder {
 
-    private String tipo;
     private String raza;
     private int edad;
     private double peso;
     private String descripcion;
-
-    @Override
-    public AnimalBuilder setTipo(String tipo) {
-        this.tipo = tipo;
-        return this;
-    }
 
     @Override
     public AnimalBuilder setRaza(String raza) {
@@ -47,6 +40,6 @@ public class VacaBuilder implements AnimalBuilder {
 
     @Override
     public Animal build() {
-        return new Animal(tipo, raza, edad, peso, descripcion);
+        return new Animal("Vaca", raza, edad, peso, descripcion);
     }
 }

@@ -4,22 +4,15 @@ import com.granjainteligente.patterns.creational.builder.interfaces.AnimalBuilde
 import com.granjainteligente.patterns.creational.builder.model.Animal;
 
 /**
- * Builder concreto para construir un {@link Animal} del tipo "Gallina".
- * Permite configurar los valores desde el cliente (sin datos fijos).
+ * Builder concreto para construir {@link Animal} del tipo "Gallina".
+ * El tipo se establece internamente al construir el objeto.
  */
 public class GallinaBuilder implements AnimalBuilder {
 
-    private String tipo;
     private String raza;
     private int edad;
     private double peso;
     private String descripcion;
-
-    @Override
-    public AnimalBuilder setTipo(String tipo) {
-        this.tipo = tipo;
-        return this;
-    }
 
     @Override
     public AnimalBuilder setRaza(String raza) {
@@ -47,6 +40,6 @@ public class GallinaBuilder implements AnimalBuilder {
 
     @Override
     public Animal build() {
-        return new Animal(tipo, raza, edad, peso, descripcion);
+        return new Animal("Gallina", raza, edad, peso, descripcion);
     }
 }
