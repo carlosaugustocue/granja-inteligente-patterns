@@ -1,9 +1,5 @@
 package com.granjainteligente;
 
-import com.granjainteligente.patterns.creational.abstractfactory.factory.FabricaVacasLecheras;
-import com.granjainteligente.patterns.creational.abstractfactory.model.animals.Animal;
-import com.granjainteligente.patterns.creational.abstractfactory.model.food.Alimento;
-import com.granjainteligente.patterns.creational.abstractfactory.model.environment.Entorno;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -39,18 +35,6 @@ public class Main {
      */
     private static void inicializarSistema() {
         log.info("Inicializando componentes del sistema...");
-
-        // 🧩 Prueba del patrón Abstract Factory
-        FabricaVacasLecheras fabricaVacas = new FabricaVacasLecheras();
-
-        Animal vaca = fabricaVacas.crearAnimal();
-        Alimento alimento = fabricaVacas.crearAlimento();
-        Entorno entorno = fabricaVacas.crearEntorno();
-
-        log.info("Animal creado: {} ({})", vaca.getTipo(), vaca.getRaza());
-        log.info("Descripción: {}", vaca.getDescripcion());
-        log.info("Alimento: {} - {}", alimento.getTipo(), alimento.getComposicion());
-        log.info("Entorno: {} - {}", entorno.getTipo(), entorno.getDescripcion());
 
         // TODO: Inicializar AlimentadorGlobal (Singleton)
         // TODO: Configurar fábricas de animales
