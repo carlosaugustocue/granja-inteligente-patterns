@@ -56,3 +56,4 @@ buildNumber.properties
 
 # Archivos de prueba locales (NO subir al repositorio)
 **/MainTest*.java
+src/main/java/com/granjainteligente/MainBuilderTest.java
