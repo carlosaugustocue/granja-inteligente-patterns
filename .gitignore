@@ -55,4 +55,4 @@ buildNumber.properties
 .DS_Store
 
 # Archivos de prueba locales (NO subir al repositorio)
-**/MainTest*.java4
+**/MainTest*.java
